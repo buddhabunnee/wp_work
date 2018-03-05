@@ -174,14 +174,14 @@ Single styles
 
 .btn:focus
 {
-	color: #fff !important;
-	background-color: black;
+	color: #000 !important;
+	background-color: #d77eb5;
 }
 
 .btn:active
 {
 	color: #000 !important;
-	background-color: #FFF;
+	background-color: #d77eb5;
 }
 
 .table
