@@ -63,11 +63,11 @@ th, td
 	border-bottom: 1px solid #ddd;
 }
 
-a:link { color: #2d8cff; }
-a:visited { color: #2d8cff; }
-a:focus { color: #d77eb5; }
-a:hover { color: #8fc605; }
-a:active { color: #d77eb5; }
+a:link { color: #2d8cff; transition: all 0.2s linear; }
+a:visited { color: #2d8cff; transition: all 0.2s linear; }
+a:focus { color: #d77eb5; transition: all 0.2s linear; }
+a:hover { color: #8fc605; transition: all 0.2s linear; }
+a:active { color: #d77eb5; transition: all 0.2s linear; }
 
 /* -----------------------
 Layout styles
@@ -168,20 +168,23 @@ Single styles
 
 .btn:hover
 {
-	color: #fff !important;
+	color: #FFF !important;
 	background-color: #8fc605;
+	transition: all 0.2s linear;
 }
 
 .btn:focus
 {
 	color: #fff !important;
 	background-color: black;
+	transition: all 0.2s linear;
 }
 
 .btn:active
 {
 	color: #000 !important;
 	background-color: #FFF;
+	transition: all 0.2s linear;
 }
 
 .table
