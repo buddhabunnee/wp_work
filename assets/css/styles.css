@@ -7,7 +7,10 @@ body
 	margin: 0;
 	padding: 0;
 	color: #333;
-	background-color: #eee;
+	background-image: url("bg.jpg");
+    background-repeat: repeat;
+	background-attachment: fixed;
+	/*background-color: #eee;*/
 	font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 }
 
@@ -101,7 +104,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d8cff', end
 	padding: 0;
 }
 
-.content { padding: 1em 1.25em; }
+.content { 
+	padding: 1em 1.25em;
+	border-right: 1px dotted #000;
+	border-left: 1px dotted #000;
+ }
 
 .footer
 {
