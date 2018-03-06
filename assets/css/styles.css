@@ -85,7 +85,7 @@ Layout styles
 
 .header
 {
-	color: #000;
+	color: #FFF;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2d8cff+0,8fc605+100 */
 background: #2d8cff; /* Old browsers */
 background: -moz-linear-gradient(45deg, #2d8cff 0%, #8fc605 100%); /* FF3.6-15 */
@@ -96,7 +96,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d8cff', end
 	text-align: center;
 }
 
-.header-heading { margin: 0; }
+.header-heading { 
+	margin: 0; 
+	font-family: 'Rammetto One', cursive;
+   -webkit-text-stroke-width: 1.5px;
+   -webkit-text-stroke-color: #000;
+}
 
 .nav-bar
 {
@@ -261,7 +266,7 @@ svg path, svg polygon {
   fill-opacity: 0.5;
   fill: #000 !important;
   stroke: #000;
-  stroke-width: 0.2;
+  stroke-width: 0.5;
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
   animation-name: draw;
@@ -284,3 +289,5 @@ svg #Shadows__x28_positive_x29_ path, svg #Shadows__x28_positive_x29_ polygon {
     fill-opacity: 1;
   }
 }
+
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
