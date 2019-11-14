@@ -1,118 +1,413 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Sarah J. S. Wordpress Development</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="Description" lang="en" content="Freelance Wordpress Development">
-		<meta name="author" content="Sarah Strohmeyer">
-		<meta name="robots" content="index, follow">
+<style>
+<style>
+@media only screen and (min-width:39.9375em) {
+body {
+	background: #003b7a url('https://retailedge.intel.com/content/images/lar/juego/bg_main1.jpg');
+	background-repeat: no-repeat;
+	background-position: center 54px;
+	overflow-x: hidden !important;
+}
+}
+@media only screen and (max-width:39.9375em) {
+body {
+	background: url('https://retailedge.intel.com/content/images/lar/juego/bg_middle.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	overflow-x: hidden !important;
+	background-attachment: fixed;
+}
+}
+.completeJuego {
+    text-align:center;
+    color: #ffffff;
+    background: rgb(0,48,85); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(0,48,85,1) 0%, rgba(0,110,187,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,48,85,1) 0%, rgba(0,110,187,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,48,85,1) 0%, rgba(0,110,187,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 7px;
+    font-size: 15px;
+    opacity: 0.4;
+}
+    
+.incompleteJuego {
+    text-align:center;
+    color: #ffffff;
+    background: rgb(0,48,85); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(0,48,85,1) 0%, rgba(0,110,187,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,48,85,1) 0%, rgba(0,110,187,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,48,85,1) 0%, rgba(0,110,187,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 7px;
+    font-size: 15px;
+    cursor:pointer;
+}
+.mobile-header {
+    background: url('https://retailedge.intel.com/content/images/lar/juego/bg_header_MOB.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+}
+.nav-button {
+	border: 2px solid #FFFFFF;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	user-select: none;
+}
+.nav-button-on {
+	background-color: #FFFFFF;
+	color: #002a69;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	user-select: none;
+}
+.how-it-works--wrap, .prizes--wrap, .trainings--wrap, .notify--wrap {
+	background-color: #e6eff5;
+}
+.how-it-works--wrap p, .prizes--wrap p, .trainings--wrap p, .notify--wrap p {
+	font-size: 1.0625rem;
+}
+.leaderboard--arrow, .HIW--arrow, .trainings--arrow, .prizes--arrow {
+	z-index: -1;
+	display: none;
+	position: absolute;
+	bottom: -10px;
+	height: 40px;
+	width: 40px;
+	background-color: #FFFFFF;
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.half-bg {
+	background: rgb(224,231,235); /* Old browsers */
+	background: -moz-linear-gradient(left, rgba(224,231,235,1) 0%, rgba(241,243,245,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, rgba(224,231,235,1) 0%, rgba(241,243,245,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, rgba(224,231,235,1) 0%, rgba(241,243,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	border-radius: 7px;
+	-webkit-box-shadow: 0px 5px 9px -2px rgba(148,148,176,0.42);
+	-moz-box-shadow: 0px 5px 9px -2px rgba(148,148,176,0.42);
+	box-shadow: 0px 5px 9px -2px rgba(148,148,176,0.42);
+}
+.prize-bg-2 {
+	background: rgb(0,48,85); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(0,48,85,1) 0%, rgba(0,110,187,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,48,85,1) 0%, rgba(0,110,187,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,48,85,1) 0%, rgba(0,110,187,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	border-radius: 7px;
+}
+.prize-bg-1 {
+	background: rgb(236,241,244); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(236,241,244,1) 0%, rgba(111,117,120,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(236,241,244,1) 0%, rgba(111,117,120,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(236,241,244,1) 0%, rgba(111,117,120,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	border-radius: 7px;
+	border: 1px solid #b3c1c7;
+}
+</style>
 
-		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-		<link rel="shortcut icon" href="favicon.ico">
+<div class="grid-x align-center-middle hide-for-small-only" style="height: 880px;"> 
 
-		<link rel="stylesheet" href="assets/css/styles.css">
-		<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-		
-		<link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
-	</head>
-	<body>
-		<div class="container">
-			<div class="header">
-				
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+	<div class="grid-x text-center align-center padding-top-for-medium-only--large padding-top-for-large--xlarge small-12 margin-horizontal--large hide-for-small-only" style="height:700px;">
+		<div class="small-12 large-11 xlarge-7 text--white"><img src="https://retailedge.intel.com/content/images/lar/juego/logo3.png"> <br>
+			<h1 class="padding-top--xlarge margin-top--xlarge" style="font-size:3.3em;margin-bottom:0px;">¡Prepará los botines y entrá a la cancha para ganar!</h1>
+			<h4 style="font-size:1.3em;" class="padding-vertical--large">En la promoción Pelota en Juego, cada tiro cuenta. Completá lo máximo de entrenamientos que puedas y aprobá el Exámen del Partido Final para levantar una copa llena de premios.</h4>
+			<h4 style="font-size:1.3em;"><strong>No hagas tiempo, el partido termina el 29 de julio.<br>
+				¡A jugar!</strong></h4>
+		</div>
+	</div>
+	
+</div>
 
-	<path d="M50,0C22.431,0,0,22.432,0,50c0,27.57,22.431,50,50,50c27.568,0,50-22.43,50-50C100,22.432,77.568,0,50,0z M50,2.281   c26.305,0,47.688,21.415,47.688,47.719c0,26.305-21.383,47.688-47.688,47.688C23.696,97.688,2.312,76.305,2.312,50   C2.312,23.696,23.696,2.281,50,2.281z M50,7.125c-14.985,0-28.175,7.669-35.844,19.312c1.007,0.032,1.977,0.062,2.781,0.062   c4.485,0,11.406-0.562,11.406-0.562c2.311-0.135,2.591,3.258,0.281,3.531c0,0-2.322,0.302-4.906,0.438l15.625,46.438l9.375-28.156   L42.03,29.907c-2.311-0.136-4.5-0.438-4.5-0.438c-2.312-0.137-2.031-3.667,0.281-3.531c0,0,7.067,0.562,11.281,0.562   c4.484,0,11.438-0.562,11.438-0.562c2.312-0.135,2.594,3.258,0.281,3.531c0,0-2.324,0.302-4.906,0.438L71.406,76l4.281-14.312   c1.852-5.936,3.279-10.174,3.279-13.844c0-5.303-1.898-8.987-3.529-11.844c-2.174-3.535-4.221-6.528-4.221-10.062   c0-3.942,2.977-7.594,7.188-7.594c0.189,0,0.378,0.021,0.562,0.031C71.338,11.383,61.166,7.125,50,7.125z M87.625,29.406   c0.184,1.366,0.312,2.858,0.312,4.438c0,4.351-0.834,9.225-3.281,15.344L71.562,87.062C84.312,79.628,92.875,65.823,92.875,50   C92.875,42.543,90.973,35.515,87.625,29.406z M10.812,32.531C8.433,37.865,7.125,43.782,7.125,50   c0,16.977,9.848,31.643,24.156,38.594L10.812,32.531z M50.75,53.75L37.875,91.156c3.844,1.131,7.916,1.719,12.125,1.719   c4.994,0,9.792-0.838,14.25-2.406c-0.113-0.184-0.227-0.382-0.312-0.594L50.75,53.75z" fill="#704987"/>
+<div class="grid-x align-center-middle show-for-small-only">
 
-				</svg>
-				<br>
-				<br>
-				<h1 class="header-heading">Sarah J. S. Wordpress Development</h1>
-			</div>
-			<div class="nav-bar">
-				<!-- <ul class="nav">
-				
-					<li><a href="#1">Example 1</a></li>
-					<li><a href="#2">Example 2</a></li>
-					<li><a href="#3">Example 3</a></li>
-					<li><a href="#4">Example 4</a></li>
-					<li><a href="#5">Example 5</a></li>
-				</ul> -->
-			</div>
-			<div class="content">
-				<div class="main">
+	<div class="grid-x text-center align-center padding-vertical--xlarge small-12 padding-horizontal--large show-for-small-only mobile-header">
+		<div class="small-12 large-10 xlarge-7 text--white"><img src="https://retailedge.intel.com/content/images/lar/juego/logo3.png"> <br>
+			<h1 class="padding-top--large" style="font-size:3.7em;">¡Prepará los botines y entrá a la cancha para ganar!</h1>
+			<h4 style="font-size:1.4em;" class="padding-vertical--large">En la promoción Pelota en Juego, cada tiro cuenta. Completá lo máximo de entrenamientos que puedas y aprobá el Exámen del Partido Final para levantar una copa llena de premios.</h4>
+			<h4 style="font-size:1.4em;"><strong>No hagas tiempo, el partido termina el 29 de julio.<br>
+				¡A jugar!</strong></h4>
+		</div>
+	</div>
+	
+</div>
 
-					<!--<h3>Wordpress Design and Development</h3>-->
-					<p>Hello and welcome! My name is Sarah and I'm an Independent Contractor serving the Greater St. Louis Area. I specialize in web design/development & graphic design. Thank you for taking the time to review my work with Wordpress CMS. Please see below for some examples with notes on my process.</p>
-					<hr>
-					
-					<h3 id="2">Academy of Science St. Louis</h3>
-					<ul>
-					<li>General maintenance work on website</li>
-					<li>Building slideshows, edits & responsive rebuilds to several pages, bug fixes</li>
-					<li>Implemented video/media for select pages</li>
-					</ul>
-					<p><a href="https://www.academyofsciencestl.org/academy-programs/academy-of-science-st-louis-science-fair/" target="new" class="btn">Live Website</a></p>
-					<hr>
-					
-					
-					<h3 id="2">Furthest Frontiers Expeditions</h3>
-					<ul>
-					<li>Took over management of website from local web development company</li>
-					<li>Bug fixes, layout fixes, addition of new content</li>
-					<li>Backend work to fine-tune some of the custom plug-ins</li>
-					</ul>
-					<p><a href="https://furthestfrontiers.com/" target="new" class="btn">Live Website</a></p>
-					<hr>
-					
-					
-					
-					<h3 id="1">Flash Track Lighting</h3>
-					<ul>
-					<li>Fresh WP install on server, modified basic theme with CSS and PHP</li>
-					<li>Client provided most of the graphics & content</li> 
-					<li>Online technical manual for the products/service</li>
-					<li>Worked closely with client in her home and remotely, taking her instruction on design details</li>
-					</ul>
-					<p><a href="http://www.flashtracklighting.com/" target="new" class="btn">Live Website</a></p>
-					<hr>
-					
-					<h3 id="4">Debra's Natural Gourmet</h3>
-					<ul>
-					<li>Tasked with making website responsive</li>
-					<li>Tasked with creating banner images, slideshow, improving general layout</li>
-					<li>Created new pages with fancier features</li>
-					</ul>
-					<p><a href="http://debrasnaturalgourmet.com/" target="new" class="btn">Live Website</a></p>
-					<hr>
-									
-					<h3 id="5">Infinite Scholars</h3>
-					<ul>
-					<li>School project - worked closely with 3 other students</li>
-					<li>Fresh WP install on server, admin setup, etc.</li>
-					<li>Responsible for homepage, sponsors section, slideshow, footer, and custom CSS to bring the site together</li>
-					</ul>
-					<p><a href="http://www.infinitescholar.org/" target="new" class="btn">Live Website</a></p>
-					<hr>
-					
-					<h3 id="3">Blue Ridge Firearms</h3>
-					<ul>
-					<li>Contracted to create Wordpress blog based upon <a href="https://blueridgefirearms.com/" target="new">existing non-WP website</a></li>
-					<li>Worked on contract through <a href="https://hens-teeth.net/" target="new">Hen's Teeth Network</a>, had little contact with client</li>
-					<li>Modified template with CSS, PHP, & plugins to fit with main website</li>
-					</ul>
-					<p><a href="https://blog.blueridgefirearms.com/" target="new" class="btn">Live Website</a></p>
-					
+<style>
+.nav-special {
+    background: -moz-linear-gradient(top,  rgba(0,60,123,1) 0%, rgba(125,185,232,0) 100%); 
+    background: -webkit-linear-gradient(top,  rgba(0,60,123,1) 0%,rgba(125,185,232,0) 100%);
+    background: linear-gradient(to bottom,  rgba(0,60,123,1) 0%,rgba(125,185,232,0) 100%);
+}
+</style>
 
-					
-				</div>
-			</div>
-			<div class="footer">
-				&copy; Copyright 2018 Sarah Jane Strohmeyer
-				<br>
-				<a href="https://www.behance.net/strohmsj91d0" target="new">Behance</a> | <a href="https://codepen.io/buddhabunnee/pens/public/" target="new">Codepen</a> | <a href="https://github.com/buddhabunnee" target="new">Github</a> | <a href="https://www.linkedin.com/in/buddhabunnee/" target="new">LinkedIn</a>	
+<div class="grid-x align-center-middle">
+    
+	<div class="small-12 large-10 xlarge-7 grid-x align-justify text-center margin-horizontal--large hide-for-small-only">
+		<div class="small-3 grid-x padding-right--small" style="position:relative;">
+			<div class="cell small-12 padding-vertical--medium padding-horizontal--small nav-button how-it-works--nav align-center-middle grid-x">
+				<MT-LOCALETEXT:219191>
+				<div class="HIW--arrow"></div>
 			</div>
 		</div>
-	</body>
-</html>
+		<div class="small-4 grid-x padding-right--small" style="position:relative;">
+			<div class="cell small-12 padding-vertical--medium padding-horizontal--small nav-button trainings--nav align-center-middle grid-x">
+				<MT-LOCALETEXT:219203>
+				<div class="trainings--arrow"></div>
+			</div>
+		</div>
+		<div class="small-2 grid-x padding-right--small" style="position:relative;">
+			<div class="cell small-12 padding-vertical--medium padding-horizontal--small nav-button leaderboard--nav align-center-middle grid-x">
+				<MT-LOCALETEXT:219214>
+				<div class="leaderboard--arrow"></div>
+			</div>
+		</div>
+		<div class="small-3 grid-x" style="position:relative;">
+			<div class="cell small-12 padding-vertical--medium padding-horizontal--small nav-button prizes--nav align-center-middle grid-x">
+				<MT-LOCALETEXT:219225>
+				<div class="prizes--arrow"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="small-12 grid-x align-justify text-center padding-horizontal--large padding-vertical--large show-for-small-only nav-special">
+		<div class="small-12 margin-vertical--small padding-vertical--medium nav-button how-it-works--nav align-center-middle grid-x">
+			<MT-LOCALETEXT:219191>
+		</div>
+		<div class="small-12 margin-vertical--small padding-vertical--medium nav-button trainings--nav align-center-middle grid-x">
+			<MT-LOCALETEXT:219203>
+		</div>
+		<div class="small-12 margin-vertical--small padding-vertical--medium nav-button leaderboard--nav align-center-middle grid-x">
+			<MT-LOCALETEXT:219214>
+		</div>
+		<div class="small-12 margin-vertical--small padding-vertical--medium nav-button prizes--nav align-center-middle grid-x">
+			<MT-LOCALETEXT:219225>
+		</div>
+	</div>
+	
+</div>
+
+<div class="grid-x align-center-middle"> 
+	<div class="small-12 large-10 xlarge-7 grid-x align-justify margin-vertical-for-medium--xlarge how-it-works--wrap padding-for-medium--xlarge padding-for-small-only--large text--black margin-horizontal-for-medium--large">
+		<p>
+			<MT-LOCALETEXT:219192>
+		</p>
+		<p style="margin-bottom:0px;">Durante <strong>5 semanas</strong>, tendrás la oportunidad de:</p>
+		<div class="grid-x align-center-middle text-center margin-vertical--xlarge">
+			<div class="cell small-12 medium-6 align-self-stretch bodyText1 padding-right-for-medium--medium padding-bottom-for-small-only--medium grid-x">
+				<div class="cell small-12 half-bg">
+					<div class="cell"><img src="https://retailedge.intel.com/content/images/lar/juego/title_primer_tiempo.png"></div>
+					<div class="cell padding-bottom--medium"><img src="https://retailedge.intel.com/content/images/lar/juego/circle_4_semanas.png"></div>
+					<p class="padding-horizontal--xlarge padding-bottom--large" style="font-size:15px;">completar lo <strong>máximo de entrenamientos que puedas</strong> (50 requeridos + demás entrenamientos disponibles en el sitio del programa, de tipos y cantidad a tu elección).</p>
+				</div>
+			</div>
+			<div class="cell small-12 medium-6 bodyText1 align-self-stretch padding-left-for-medium--medium padding-top-for-small-only--medium grid-x">
+				<div class="cell small-12 half-bg">
+					<div class="cell"><img src="https://retailedge.intel.com/content/images/lar/juego/title_segundo_tiempo.png"></div>
+					<div class="cell padding-bottom--medium"><img src="https://retailedge.intel.com/content/images/lar/juego/circle_1_semana.png"></div>
+					<p class="padding-horizontal--xlarge padding-bottom--medium" style="font-size:15px;">
+						<MT-LOCALETEXT:219198>
+					</p>
+				</div>
+			</div>
+		</div>
+		<p>
+			<MT-LOCALETEXT:219199>
+		</p>
+		<p>
+			<MT-LOCALETEXT:219200>
+		</p>
+		<p>
+			<MT-LOCALETEXT:219201>
+		</p>
+		<p>Los <strong>14 primeros futbolistas del Ranking Final</strong> recibirán súper premios que Intel ha preparado.</p>
+		<p class="small-12 text-center padding-top--small" style="margin-bottom:0px;">
+			<a href="/50/lar/juego/terms"><MT-LOCALETEXT:219623></a>
+		</p>
+	</div>
+</div>
+
+
+<div class="grid-x align-center-middle"> 	
+	<div class="small-12 large-10 xlarge-7 grid-x align-center margin-vertical-for-medium--xlarge prizes--wrap padding-for-medium--xlarge padding-for-small-only--large text--black margin-horizontal-for-medium--large" style="display:none;">
+		<p class="medium-12 text-center"> Juega bonito, levanta la copa de la Liga del Programa Intel® Retail Edge y llévate a casa uno de esos súper premios: </p>
+		
+		<div class="grid-x show-for-large align-center cell">
+			<div class="medium-12 grid-x margin-vertical--medium" style="background: url('https://retailedge.intel.com/content/images/lar/juego/prize_block_1.png');background-repeat: no-repeat;background-position: center; overflow-x: hidden !important; background-size: contain; height: 86px; width: 874px; position: relative;">
+				<div class="text--white" style="position:absolute; left: 43%; top: 30px;">Smart TV Samsung 50 " 4K Ultra HD UN50MU6100GCDF</div>
+			</div>
+			<div class="medium-12 grid-x margin-vertical--medium" style="background: url('https://retailedge.intel.com/content/images/lar/juego/prize_block_2.png');background-repeat: no-repeat;background-position: center; overflow-x: hidden !important; background-size: contain; height: 92px; width: 874px; position: relative;">
+				<div class="text--white" style="position:absolute; left: 43%; top: 34px;">Consola Microsoft Xbox One S 1TB + Gamepad Blanco</div>
+			</div>
+			<div class="medium-12 grid-x margin-vertical--medium" style="background: url('https://retailedge.intel.com/content/images/lar/juego/prize_block_3.png');background-repeat: no-repeat;background-position: center; overflow-x: hidden !important; background-size: contain; height: 92px; width: 874px; position: relative;">
+				<div class="text--white" style="position:absolute; left: 43%; top: 40px;">Celular Libre Samsung J6 Plus Negro</div>
+			</div>
+			<div class="medium-12 grid-x margin-vertical--medium" style="background: url('https://retailedge.intel.com/content/images/lar/juego/prize_block_4.png');background-repeat: no-repeat;background-position: center; overflow-x: hidden !important; background-size: contain; height: 95px; width: 874px; position: relative;">
+				<div class="text--white" style="position:absolute; left: 43%; top: 40px;">Parlante Portátil JBL Flip4 Rojo</div>
+			</div>
+			<div class="medium-12 grid-x margin-vertical--medium" style="background: url('https://retailedge.intel.com/content/images/lar/juego/prize_block_5.png');background-repeat: no-repeat;background-position: center; overflow-x: hidden !important; background-size: contain; height: 99px; width: 874px; position: relative;">
+				<div class="text--white" style="position:absolute; left: 43%; top: 40px;">Mochila portanotebook con logo Intel</div>
+			</div>
+		</div>
+		
+		<div class="grid-x align-center text-center hide-for-large">
+			<div class="cell small-12 medium-6 bodyText1 padding-right-for-medium--medium margin-vertical--medium grid-x">
+				<div class="cell small-12 prize-bg-1 grid-x">
+					<div class="small-12 prize-bg-2 margin--xsmall">
+						<div class="cell text-left"><img src="https://retailedge.intel.com/content/images/lar/juego/final/mobile_1ro_lugar1.png"></div>
+						<div class="cell padding-vertical--medium"><img src="https://retailedge.intel.com/content/images/lar/juego/1.png"></div>
+						<p class="padding-horizontal--medium text--white" style="font-size:15px;">Smart TV Samsung 50 " 4K Ultra HD UN50MU6100GCDF</p>
+					</div>
+				</div>
+			</div>
+			<div class="cell small-12 medium-6 bodyText1 align-self-stretch margin-vertical--medium padding-left-for-medium--medium grid-x">
+				<div class="cell small-12 prize-bg-1 grid-x">
+					<div class="small-12 prize-bg-2 margin--xsmall">
+						<div class="cell text-left"><img src="https://retailedge.intel.com/content/images/lar/juego/final/mobile_2do_lugar2.png"></div>
+						<div class="cell padding-vertical--medium"><img src="https://retailedge.intel.com/content/images/lar/juego/2.png"></div>
+						<p class="padding-horizontal--medium text--white" style="font-size:15px;">Consola Microsoft Xbox One S 1TB + Gamepad Blanco</p>
+					</div>
+				</div>
+			</div>
+			<div class="cell small-12 medium-6 bodyText1 align-self-stretch margin-vertical--medium padding-right-for-medium--medium grid-x">
+				<div class="cell small-12 prize-bg-1 grid-x">
+					<div class="small-12 prize-bg-2 margin--xsmall">
+						<div class="cell text-left"><img src="https://retailedge.intel.com/content/images/lar/juego/final/mobile_3ro_lugar3.png"></div>
+						<div class="cell padding-vertical--medium"><img src="https://retailedge.intel.com/content/images/lar/juego/3.png"></div>
+						<p class="padding-horizontal--medium text--white" style="font-size:15px;">Celular Libre Samsung J6 Plus Negro</p>
+					</div>
+				</div>
+			</div>
+			<div class="cell small-12 medium-6 bodyText1 align-self-stretch margin-vertical--medium padding-left-for-medium--medium grid-x">
+				<div class="cell small-12 prize-bg-1 grid-x">
+					<div class="small-12 prize-bg-2 margin--xsmall">
+						<div class="cell text-left"><img src="https://retailedge.intel.com/content/images/lar/juego/final/mobile_4to_lugar4.png"></div>
+						<div class="cell padding-vertical--medium"><img src="https://retailedge.intel.com/content/images/lar/juego/4.png"></div>
+						<p class="padding-horizontal--medium text--white" style="font-size:15px;">Parlante Portátil JBL Flip4 Rojo</p>
+					</div>
+				</div>
+			</div>
+			<div class="cell small-12 medium-6 bodyText1 align-self-stretch margin-vertical--medium grid-x">
+				<div class="cell small-12 prize-bg-1 grid-x">
+					<div class="small-12 prize-bg-2 margin--xsmall">
+						<div class="cell text-left"><img src="https://retailedge.intel.com/content/images/lar/juego/final/mobile_5to_lugar5.png"></div>
+						<div class="cell padding-vertical--medium"><img src="https://retailedge.intel.com/content/images/lar/juego/5.png"></div>
+						<p class="padding-horizontal--medium text--white" style="font-size:15px;">Mochila portanotebook con logo Intel</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<script>
+irep.ready(function () {
+    
+    if (window.location.href.indexOf("juego#final") > -1 ) {
+       	setTimeout(function() {
+            $("div.leaderboard--nav").trigger('click');
+        },10);
+	}
+	
+    $(".how-it-works--nav").addClass("nav-button-on");
+    $(".how-it-works--wrap").show();
+    $(".HIW--arrow").show();
+    $(".argentinaPelogaLeaderboard").hide();
+    
+    $(".how-it-works--nav").on("click", function(){
+            
+        $(".how-it-works--nav").addClass("nav-button-on");
+        $(".leaderboard--nav").removeClass("nav-button-on");
+        $(".trainings--nav").removeClass("nav-button-on");
+        $(".prizes--nav").removeClass("nav-button-on");
+        
+        $(".how-it-works--wrap").show();
+        $(".trainings--wrap").hide();
+        $(".prizes--wrap").hide();
+        $(".argentinaPelogaLeaderboard").hide();
+			
+        $(".HIW--arrow").show();
+		$(".trainings--arrow").hide();
+		$(".prizes--arrow").hide();
+		$(".leaderboard--arrow").hide();
+
+    });
+    
+    $(".trainings--nav").on("click", function(){
+        
+        $(".trainings--nav").addClass("nav-button-on");
+        $(".leaderboard--nav").removeClass("nav-button-on");
+        $(".how-it-works--nav").removeClass("nav-button-on");
+        $(".prizes--nav").removeClass("nav-button-on");
+        
+        $(".trainings--wrap").show();
+        $(".how-it-works--wrap").hide();
+        $(".prizes--wrap").hide();
+        $(".argentinaPelogaLeaderboard").hide();
+			
+        $(".trainings--arrow").show();
+		$(".HIW--arrow").hide();
+		$(".prizes--arrow").hide();
+		$(".leaderboard--arrow").hide();
+		
+    });
+    
+    $(".leaderboard--nav").on("click", function(){
+        
+        $(".leaderboard--nav").addClass("nav-button-on");    
+        $(".how-it-works--nav").removeClass("nav-button-on");
+        $(".trainings--nav").removeClass("nav-button-on");
+        $(".prizes--nav").removeClass("nav-button-on");
+        
+        $(".argentinaPelogaLeaderboard").show();
+        $(".how-it-works--wrap").hide();
+        $(".trainings--wrap").hide();
+        $(".prizes--wrap").hide();
+			 
+        $(".leaderboard--arrow").show();
+		$(".prizes--arrow").hide();
+		$(".HIW--arrow").hide();
+		$(".trainings--arrow").hide();
+            
+    });
+        
+    $(".prizes--nav").on("click", function(){
+            
+        $(".prizes--nav").addClass("nav-button-on");
+        $(".leaderboard--nav").removeClass("nav-button-on");
+        $(".trainings--nav").removeClass("nav-button-on");
+        $(".how-it-works--nav").removeClass("nav-button-on");
+        
+        $(".prizes--wrap").show();
+        $(".how-it-works--wrap").hide();
+        $(".trainings--wrap").hide();
+        $(".argentinaPelogaLeaderboard").hide();
+			
+        $(".prizes--arrow").show();
+		$(".leaderboard--arrow").hide();
+		$(".HIW--arrow").hide();
+		$(".trainings--arrow").hide();
+            
+    });
+    
+    irep.callApi({url:"/education/promotiontimeframe", type:"POST", data:{SearchItems: [{Type: "tag", Value: "Juego"}], StartDate: "6-24-2019 10:00"}}).done(function(d){ 
+        $.each(d.items, function(i,l){
+            if(l.completed){
+            $('#trainings--grid').append('<div class="cell small-12 medium-6 prize-bg-1 grid-x"><div class="completeJuego grid-x small-12 padding-vertical--medium padding-horizontal--large text-center margin--xsmall"><div class="cell auto text-left align-self-middle">' + l.name + '</div></div></div>')
+            }
+            else {
+            $('#trainings--grid').append('<a class="cell small-12 medium-6 prize-bg-1 grid-x" href="/50/lar/learning/details?code=' + l.code + '&returnurl=juego"><div class="incompleteJuego grid-x small-12 margin--xsmall padding-vertical--medium padding-horizontal--large text-center"><div class="cell auto text-left align-self-middle">' + l.name + '</div></div></a>')
+            }   
+    });
+});
+
+    //style fixes
+    $(".leaderboardsWrapper").addClass("margin-vertical-for-medium--xlarge");
+    $(".leaderboardsWrapper").removeClass("margin-top--xlarge");
+    $(".leaderboardsWrapper .text-left").removeClass("margin-top--xlarge");
+    $(".leaderboardsWrapper .text-left").addClass("padding-vertical-for-medium--xlarge padding-vertical-for-small-only--large");
+    
+});
+</script>
